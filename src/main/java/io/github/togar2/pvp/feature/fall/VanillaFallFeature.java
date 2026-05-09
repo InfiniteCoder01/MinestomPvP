@@ -106,7 +106,8 @@ public class VanillaFallFeature implements FallFeature, RegistrableFeature {
 			return;
 		}
 
-		double peakY = entity.getTag(PEAK_Y);
+		Double peakY = entity.getTag(PEAK_Y);
+		if (peakY == null) return;
 		resetFallDistance(entity, newY); // hit the ground reset
 
 		if (peakY-newY < 4) return;
